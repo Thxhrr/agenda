@@ -17,8 +17,8 @@ export class AdicionaContato {
   constructor(private fb: FormBuilder) {
     this.formContato = this.fb.group({
       nome: ['', [Validators.required, Validators.minLength(3)]],
-      aniversario: ['', [Validators.required]],   // já tinha, obrigatório
-      telefone: ['', [Validators.required]],     // novo campo obrigatório
+      aniversario: ['', [Validators.required]],
+      telefone: ['', [Validators.required]],
       tipo: [TipoContato.AMIGO, [Validators.required]]
     });
 
@@ -43,7 +43,7 @@ export class AdicionaContato {
 
   limparCampos() {
     this.formContato.reset();
-    this.formContato.get('tipo')?.setValue(TipoContato.AMIGO); // opcional: restaura tipo
+    this.formContato.get('tipo')?.setValue(TipoContato.AMIGO);
   }
 
   getTipoContato(str: string): TipoContato {
